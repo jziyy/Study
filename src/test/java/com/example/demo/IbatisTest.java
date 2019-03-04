@@ -3,6 +3,7 @@ package com.example.demo;
 
 import com.example.demo.ibatis.Ibatis_Bean;
 import com.example.demo.ibatis.Ibatis_Dao;
+import com.example.demo.ibatis.Ibatis_Dao_Oarcle;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -13,6 +14,14 @@ public class IbatisTest extends DemoApplicationTests {
 
     @Autowired
     Ibatis_Dao ibatis_dao;
+
+    @Autowired
+    Ibatis_Dao_Oarcle ibatis_dao_oarcle;
+
+    @Test
+    public void demo1(){
+        System.out.println(ibatis_dao_oarcle.getList());
+    }
 
     @Test
     public void InsertManyBean(){

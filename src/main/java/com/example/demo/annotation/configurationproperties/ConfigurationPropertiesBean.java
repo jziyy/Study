@@ -6,7 +6,7 @@ import org.springframework.context.annotation.PropertySource;
 import org.springframework.stereotype.Component;
 @Data
 @Component
-@PropertySource("classpath:/demo/application.properties")
+@PropertySource("classpath:application.properties")
 @ConfigurationProperties(prefix = "user1.bean")
 public class ConfigurationPropertiesBean {
     private String name;

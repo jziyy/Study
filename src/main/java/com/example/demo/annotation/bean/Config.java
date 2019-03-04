@@ -1,12 +1,19 @@
 package com.example.demo.annotation.bean;
 
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Scope;
 @Slf4j
 @Configuration
 public class Config {
+
+
+    @Value("aasdasda")
+    String aaa;
 
     @Bean("userbean1")
     @Scope(value = "prototype")
@@ -26,5 +33,11 @@ public class Config {
         //log.info("aaaaaaaaa" + bean.toString());
 
         return bean;
+    }
+
+
+    @Bean
+    public Bean_user bean_user(@Autowired@Qualifier("userbean2")UserBean user){
+        return new Bean_user(user);
     }
 }
