@@ -7,7 +7,7 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class ConfigurationPropertiesConfig {
     @Bean
-    @ConfigurationProperties(prefix = "user1.bean")
+    @ConfigurationProperties
     public ConfigurationPropertiesBean getBean(){
         return new ConfigurationPropertiesBean();
     }

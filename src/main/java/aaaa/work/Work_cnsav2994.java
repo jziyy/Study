@@ -9,8 +9,7 @@ import java.util.function.Function;
 
 
 /**
- 宠物医师网1
-
+ * 宠物医师网
  */
 
 public class Work_cnsav2994 {
@@ -20,7 +19,7 @@ public class Work_cnsav2994 {
 		int state = 1;
 
 
-		/**url处理方法*/
+		/**产品地址*/
 		Function<Integer,String> Fsearchurl = (i) -> {
 			if (i==1){
 				return "http://cnsav.com/html/pingpai/doctor_jq/index.html";
@@ -29,13 +28,13 @@ public class Work_cnsav2994 {
 			}
 		};
 
-		/**网站名称*/
+		/**公司名称*/
 		String company = "宠物医师网";
 
-		/**获取所有标签*/
+		/**获取所有的产品标签方法*/
 		Function<Document, Elements> FMain = (e) -> e.getElementsByAttributeValue("class","listart");
 
-		/**获取图片url*/
+		/**获取单个产品标签的图片url方法*/
 		Function<Element,String> FimgUrl = (e) ->{
 			String img;
 			for (int i = 0; i < e.select("img").size(); i++) {
@@ -48,11 +47,11 @@ public class Work_cnsav2994 {
 		};
 
 
-		/**获取商品名称*/
+		/**获取商品名称的方法*/
 		Function<Element,String> FgoodName  = (e) -> e.getElementsByAttributeValue("target","_blank")
 				.select("span").text();
 
-		/**获取商品地址    http://www.glory-way.com/*/
+		/**获取商品的URL详细页方法    http://www.glory-way.com/*/
 		Function<Element,String> FgoodUrl  = (e) -> "http://cnsav.com/" + e.getElementsByAttributeValue("target","_blank").get(1)
 				.attr("href");
 

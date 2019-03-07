@@ -9,13 +9,13 @@ import java.util.Map;
 public class JdbcUtil {
 
 	public static Connection getConnection() throws Exception {
-			//加载数据库驱动程序
-			Class.forName("oracle.jdbc.driver.OracleDriver");
-			Connection conn = DriverManager.getConnection("jdbc:oracle:thin:@172.22.41.114:1521/orcl", "o2optzq", "o2optzq");
-			return conn;
+		//加载数据库驱动程序
+		Class.forName("oracle.jdbc.driver.OracleDriver");
+		Connection conn = DriverManager.getConnection("jdbc:oracle:thin:@172.22.41.114:1521/orcl", "o2optzq", "o2optzq");
+		return conn;
 	}
-	
-	
+
+
 	public static void close(ResultSet rs,Statement st,Connection conn){
 		if(rs != null){
 			try {
@@ -44,11 +44,11 @@ public class JdbcUtil {
 	}
 	@SuppressWarnings("unchecked")
 	public static List getList(String sql) {
-		 Connection conOrcale = null;
-		 Statement stat = null;
-		 ResultSet rs;
-		 ResultSetMetaData rsmd;
-		 PreparedStatement pstat;
+		Connection conOrcale = null;
+		Statement stat = null;
+		ResultSet rs;
+		ResultSetMetaData rsmd;
+		PreparedStatement pstat;
 		List ll = new ArrayList();
 		try {
 			conOrcale =getConnection();

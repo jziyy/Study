@@ -20,11 +20,20 @@ public class Work_dlmedical3007 {
 
 	public static void main(String[] args) {
 		//为1时进行插入
-		int state = 2;
+		int state = 1;
 
 
 		/**产品地址*/
-		Function<Integer,String> Fsearchurl = (i) -> "http://www.dlmedical.com/index.php/product/index/p/"+ i +".shtml";
+		Function<Integer,String> Fsearchurl = (i) -> {
+			if (i <= 4) {
+				return  "http://www.dlmedical.com/index.php/product/index/p/" + i + ".shtml";
+			}
+			else {
+				System.exit(1);
+			}
+			return null;
+			};
+
 
 		/**公司名称*/
 		String company = "北京万东鼎立医疗设备有限公司";

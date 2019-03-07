@@ -7,8 +7,7 @@ import java.util.function.Function;
 import static aaaa.template.Template_P.pcTemplate;
 
 /**
- 北京杰西慧中科技有限公司1
-
+ * 北京杰西慧中科技有限公司
  */
 
 public class Work_jxhzmed2928 {

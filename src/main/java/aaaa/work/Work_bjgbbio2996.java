@@ -14,7 +14,7 @@ import static aaaa.template.Template_P.insert;
 
 
 /**
- * 北京西雅金桥生物科技1
+ * 北京西雅金桥生物科技
  */
 
 public class Work_bjgbbio2996 {
@@ -25,26 +25,26 @@ public class Work_bjgbbio2996 {
 		DecimalFormat decimalFormat =new DecimalFormat("00");
 		System.out.println(decimalFormat.format(1));
 
-		//当state =1时为插入方法
+		//为1时进行插入
 		int state = 1;
 		for (int i = 0; i < 21; i++) {
 
 			int a = i;
-			/**url处理方法*/
+			/**产品地址*/
 
 			Function<Integer, String> Fsearchurl = (j) ->  "http://www.bjgbbio.com/productitem/" + j + "/0000"+ decimalFormat.format(a) +"/.html";
 
-			/**网站名称*/
+			/**公司名称*/
 			String company = "北京西雅金桥生物科技";
 
-			/**获取所有标签*/
+			/**获取所有的产品标签方法*/
 			Function<Document, Elements> FMain = (e) -> {
 				Elements elements = e.select("tbody tr");
 				elements.removeIf(element -> element.select("td a").size()==0);
 				return elements;
 			};
 
-			/**获取图片url*/
+			/**获取单个产品标签的图片url方法*/
 			Function<Element, String> FimgUrl = (e) -> {
 				String html = getGoodsHtml("http://www.bjgbbio.com/" +
 						e.select("td a").get(0).attr("href"));
@@ -53,16 +53,16 @@ public class Work_bjgbbio2996 {
 						.attr("src");
 			};
 
-			/**获取商品名称*/
+			/**获取商品名称的方法*/
 			Function<Element, String> FgoodName = (e) ->
 					e.select("td a").get(1).text();;
 
-			/**获取商品地址    http://www.glory-way.com/*/
+			/**获取商品的URL详细页方法    http://www.glory-way.com/*/
 			Function<Element, String> FgoodUrl = (e) -> "http://www.bjgbbio.com/"+
 					e.select("td a").get(0).attr("href");
 
 			Template_p2.pcTemplate(Fsearchurl, FMain, FimgUrl, FgoodName, FgoodUrl, company, state);
 		}
 	}
-	}
+}
 
