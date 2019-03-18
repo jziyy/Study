@@ -102,10 +102,11 @@ public class Template_P {
 			Thread.sleep(1000);
 			html = conn.get().html();
 			if(html.contains("没有找到与")&&html.contains("相关的商品")){
+				System.out.println(html);
 				html="false";
 			}
 		} catch (Exception e) {
-			e.printStackTrace();
+			System.out.println(e.getMessage());
 		}finally{
 			return html;
 		}

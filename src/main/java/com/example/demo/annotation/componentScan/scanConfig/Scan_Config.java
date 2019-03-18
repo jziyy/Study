@@ -8,8 +8,8 @@ import org.springframework.stereotype.Service;
  * ComponentScan 扫描时使用excludeFilter属性可以让扫描不扫描特定注解
  * */
 @Configuration
-@ComponentScan(basePackages = "com.example.demo.annotation.componentScan.*",
-        excludeFilters = {@ComponentScan.Filter(classes = {Service.class})})
+//@ComponentScan(basePackages = "com.example.demo.annotation.componentScan.*",
+//        excludeFilters = {@ComponentScan.Filter(classes = {Service.class})})
 public class Scan_Config {
 
 }

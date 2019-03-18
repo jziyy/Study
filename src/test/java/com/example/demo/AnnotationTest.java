@@ -1,12 +1,16 @@
 package com.example.demo;
 
+import com.example.demo.annotation.aop.bean.Aop_UserInfo;
+import com.example.demo.annotation.aop.service.Aop_UserNameVaidateImpl;
+import com.example.demo.annotation.aop.service.Aop_UserNameValidate;
+import com.example.demo.annotation.aop.service.Aop_UserService;
+import com.example.demo.annotation.aop.service.Aop_UserValidate;
 import com.example.demo.annotation.bean.Bean_spring_other;
 import com.example.demo.annotation.bean.Bean_user;
 import com.example.demo.annotation.bean.Persion;
 import com.example.demo.annotation.bean.UserBean;
 import com.example.demo.annotation.componentScan.dao.Scan_Bean;
 import com.example.demo.annotation.componentScan.dao.Scan_Controller;
-import com.example.demo.annotation.componentScan.dao.Scan_Service;
 import com.example.demo.annotation.conditional.ConditionalBean;
 import com.example.demo.annotation.conditional.onproperty.PropertyPersion;
 import com.example.demo.annotation.configurationproperties.ConfigurationPropertiesBean;
@@ -75,6 +79,32 @@ public class AnnotationTest extends DemoApplicationTests {
 
     @Autowired
     ElBean elBean;
+
+
+
+    @Autowired
+    Aop_UserService aop_userService;
+
+
+    @Test
+    public void aopTest(){
+        Aop_UserInfo aop_userInfo = new Aop_UserInfo();
+
+        aop_userService.printUser(aop_userInfo);
+//
+//        Aop_UserValidate aop_userValidate = (Aop_UserValidate) aop_userService;
+//        if (aop_userValidate.validate(aop_userInfo)){
+//        }
+//        aop_userService.printUser(aop_userInfo);
+//        Aop_UserNameValidate  aop_userNameVaidate = (Aop_UserNameValidate) aop_userService;
+//        aop_userNameVaidate.userNameValidate(aop_userInfo);
+//
+
+
+
+    }
+
+
     @Test
     public void getBean(){
         System.out.println(elBean.toString());

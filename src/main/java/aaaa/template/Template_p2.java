@@ -4,6 +4,7 @@ import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
+import org.springframework.util.StringUtils;
 
 import java.util.HashMap;
 import java.util.UUID;
@@ -39,19 +40,33 @@ public class Template_p2 {
 			while (true) {
 
 				searchurl = Fsearch.apply(i);
+				if (StringUtils.isEmpty(searchurl)){
+					return;
+				}
 				String html = getGoodsHtml(searchurl);
+				if (StringUtils.isEmpty(html.trim())){
+					break;
+				}
 				Document doc = Jsoup.parse(html);
 
 				Elements elements1 = FMain.apply(doc);
 				if (elements1.size()==0){
+					System.out.println(elements1.size());
 					break;
 				}
+				int a = 1;
 				for (Element e:elements1) {
-
+					 System.out.println(a++);
 					 imgUrl = FimgUrl.apply(e);
 					 goodName = FgoodName.apply(e);
+					try {
 					 goodUrl =  FgoodUrl.apply(e);
-					 goodsHtml = getGoodsHtml(goodUrl);
+
+
+						 goodsHtml = getGoodsHtml(goodUrl);
+					 }catch (Exception e1){
+
+					 }
 					 goodId = UUID.randomUUID().toString().replaceAll("-", "");
 					 HashMap<Object,Object> map = new HashMap<>();
 					 map.put("goodId", goodId);
@@ -67,7 +82,11 @@ public class Template_p2 {
 					 System.out.println("goodUrl   :  " + goodUrl);
 					 System.out.println("imgUrl    :  " + imgUrl);
 					 System.out.println("company   :  " + company);
+					 if (goodsHtml.length() > 50){
 					 System.out.println("goodsHtml :  " + goodsHtml.substring(0,50));
+					 }else {
+						 System.out.println(goodsHtml);
+					 }
 					 System.out.println();
 					 System.out.println("-------------------------------------------");
 					 System.out.println();

@@ -65,53 +65,74 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-jdbc</artifactId>
         </dependency>
-        <!-- https://mvnrepository.com/artifact/com.eurodyn.qlack2.util/qlack2-util-drivers-ojdbc8 -->
-        <dependency>
-            <groupId>com.eurodyn.qlack2.util</groupId>
-            <artifactId>qlack2-util-drivers-ojdbc8</artifactId>
-            <version>2.3.9</version>
-        </dependency>
 
 
+        <!--jdbc依赖包-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-jdbc</artifactId>
         </dependency>
+        <!--mybatis依赖包-->
         <dependency>
             <groupId>org.mybatis.spring.boot</groupId>
             <artifactId>mybatis-spring-boot-starter</artifactId>
             <version>2.0.0</version>
         </dependency>
+        <!--消息队列依赖包-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-amqp</artifactId>
         </dependency>
+        <!--redis依赖包-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-redis</artifactId>
         </dependency>
 
+        <!--mysql依赖包-->
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
             <scope>runtime</scope>
         </dependency>
+        <!--获取网页源码包-->
         <dependency>
             <groupId>org.apache.httpcomponents</groupId>
             <artifactId>httpclient</artifactId>
             <version>4.5.6</version>
         </dependency>
+        <!--解析网页html数据包-->
         <dependency>
             <groupId>org.jsoup</groupId>
             <artifactId>jsoup</artifactId>
             <version>1.8.1</version>
         </dependency>
+        <!--oracle依赖-->
         <dependency>
             <groupId>com.oracle</groupId>
             <artifactId>ojdbc8</artifactId>
             <version>1.0.0</version>
         </dependency>
 
+
+        <!--aop注解-->
+        <dependency>
+            <groupId>org.aspectj</groupId>
+            <artifactId>aspectjweaver</artifactId>
+            <version>1.7.2</version>
+        </dependency>
+
+        <!--网页模拟器-->
+        <dependency>
+            <groupId>com.jxbrowser-win</groupId>
+            <artifactId>jxbrowser-win</artifactId>
+            <version>6.0.2</version>
+        </dependency>
+        <dependency>
+            <groupId>com.jxbrowser</groupId>
+            <artifactId>jxbrowser</artifactId>
+            <version>6.0.2</version>
+        </dependency>
 
     </dependencies>
 

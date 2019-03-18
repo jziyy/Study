@@ -27,7 +27,7 @@ public class Value_Bean1 {
     @Value("${user.bean.password}")
     public void setPassword(String password) {
         this.password = password;
-        System.out.println(password);
+    //    System.out.println(password);
     }
 
     @Override

@@ -1,0 +1,16 @@
+mvn install:install-file -DgroupId=com.jxbrowser-win -DartifactId=jxbrowser-win -Dversion=6.0.2 -Dpackaging=jar -Dfile=jxbrowser-win-6.0.2.jar
+
+//每一行中间空一格
+mvn install:install-file
+    -DgroupId=com.jxbrowser-win         //groupId
+     -DartifactId=jxbrowser-win             //artifactId
+      -Dversion=6.0.2                       //version
+       -Dpackaging=jar                      //导入的类型
+        -Dfile=jxbrowser-win-6.0.2.jar          //导入的文件位置
+
+
+          <dependency>
+                    <groupId>com.jxbrowser-win</groupId>
+                    <artifactId>jxbrowser-win</artifactId>
+                    <version>1.7.2</version>
+                </dependency>

@@ -24,6 +24,7 @@ public class Config {
       //  log.info("aaaaaaaaaaaa" + bean.toString());
         return bean;
     }
+
     @Bean("userbean2")
     @Scope(value = "prototype")
     public UserBean getBean1(){
