@@ -1,5 +1,6 @@
 package aaaa.template.p;
 
+import aaaa.template.Template_P;
 import aaaa.template.Template_p2;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
@@ -9,7 +10,6 @@ import org.jsoup.select.Elements;
 import java.text.DecimalFormat;
 import java.util.function.Function;
 
-import static aaaa.template.Template_P.getGoodsHtml;
 
 
 /**
@@ -45,7 +45,7 @@ public class FWork {
 
 			/**获取单个产品标签的图片url方法*/
 			Function<Element, String> FimgUrl = (e) -> {
-				String html = getGoodsHtml("http://www.bjgbbio.com/" +
+				String html = Template_P.getGoodsHtml("http://www.bjgbbio.com/" +
 						e.select("td a").get(0).attr("href"));
 				Document doc = Jsoup.parse(html);
 				return "http://www.bjgbbio.com/" + doc.getElementsByAttributeValue("class","proitem-img").select("img")

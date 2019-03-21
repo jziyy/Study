@@ -1,5 +1,6 @@
 package aaaa.template.p;
 
+import aaaa.template.Template_P;
 import aaaa.template.Template_p2;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
@@ -8,7 +9,7 @@ import org.jsoup.select.Elements;
 
 import java.util.function.Function;
 
-import static aaaa.template.Template_P.getGoodsHtml;
+
 
 
 /**
@@ -20,7 +21,7 @@ public class FFFWork {
 	public static void main(String[] args) {
 
 
-		String html = getGoodsHtml("http://www.tigsun.com/cn/hxfgsj.html");
+		String html = Template_P.getGoodsHtml("http://www.tigsun.com/cn/hxfgsj.html");
 		Document doc = Jsoup.parse(html);
 
 		Elements elements = doc.select("div.nav_search a");
@@ -32,12 +33,12 @@ public class FFFWork {
 			String searchurl = ("http://www.tigsun.com" + elements.get(i).attr("href"));
 			System.out.println(searchurl);
 
-			Elements elements1 = Jsoup.parse(getGoodsHtml(searchurl))
+			Elements elements1 = Jsoup.parse(Template_P.getGoodsHtml(searchurl))
 					.getElementsByAttributeValue("class","cplb_zy");
 			elements1.forEach(element -> {
 				String searchurl1 = "http://www.tigsun.com" + element.select("a").attr("href");
 
-				Elements elements2 = Jsoup.parse(getGoodsHtml(searchurl1))
+				Elements elements2 = Jsoup.parse(Template_P.getGoodsHtml(searchurl1))
 						.getElementsByAttributeValue("class","cplb_nav").select("a");
 				elements2.forEach(element1 -> {
 

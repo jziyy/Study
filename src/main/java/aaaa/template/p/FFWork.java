@@ -1,5 +1,6 @@
 package aaaa.template.p;
 
+import aaaa.template.Template_P;
 import aaaa.template.Template_p2;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
@@ -8,7 +9,6 @@ import org.jsoup.select.Elements;
 
 import java.util.function.Function;
 
-import static aaaa.template.Template_P.getGoodsHtml;
 
 
 /**
@@ -20,7 +20,7 @@ public class FFWork {
 	public static void main(String[] args) {
 
 
-		String html = getGoodsHtml("http://www.jhxyq.com/");
+		String html = Template_P.getGoodsHtml("http://www.jhxyq.com/");
 		Document doc = Jsoup.parse(html);
 
 		Elements elements = doc.select("table tbody tr td tbody tr td table tbody tr td table tbody tr td a");

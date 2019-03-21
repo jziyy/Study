@@ -1,5 +1,6 @@
 package aaaa.template;
 
+import aaaa.util.HttpClient_Get_Url;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
@@ -16,7 +17,7 @@ import static aaaa.template.Template_P.insert;
 /**
  * 多页模板1.0
  */
-public class Template_p2 {
+public class Template_p2_2312 {
 
 
 	public static void pcTemplate(Function<Integer,String> Fsearch, Function<Document,Elements> FMain,
@@ -43,7 +44,7 @@ public class Template_p2 {
 				if (StringUtils.isEmpty(searchurl)){
 					return;
 				}
-				String html = getGoodsHtml(searchurl);
+				String html = HttpClient_Get_Url.getHtmlByHttpclientgb2312(searchurl);
 				if (StringUtils.isEmpty(html.trim())){
 					break;
 				}
@@ -59,14 +60,14 @@ public class Template_p2 {
 					 System.out.println(a++);
 					 imgUrl = FimgUrl.apply(e);
 					 goodName = FgoodName.apply(e);
+					try {
 					 goodUrl =  FgoodUrl.apply(e);
 
 
-					 goodsHtml = getGoodsHtml(goodUrl);
-					 if (goodsHtml == null || goodsHtml.trim().equals("")){
-					 	return;
-					 }
+						 goodsHtml = getGoodsHtml(goodUrl);
+					 }catch (Exception e1){
 
+					 }
 					 goodId = UUID.randomUUID().toString().replaceAll("-", "");
 					 HashMap<Object,Object> map = new HashMap<>();
 					 map.put("goodId", goodId);
