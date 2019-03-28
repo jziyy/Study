@@ -6,7 +6,7 @@ import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.stereotype.Component;
 
 @Component
-@RabbitListener(queues = "direct_rabbitmq")
+//@RabbitListener(queues = "direct_rabbitmq")
 public class Direct_Consumer {
 
     @RabbitHandler
