@@ -7,7 +7,6 @@ import java.util.Comparator;
 import java.util.List;
 
 public class Equals {
-    public List<String> list =new ArrayList<>();
     public static void main(String[] args) {
         File file = new File("E:\\work\\新建文件夹 (2) - 副本 - 副本");
         File [] files = file.listFiles();

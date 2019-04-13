@@ -21,7 +21,7 @@ public class Stream_1 {
 //        i.forEach(System.out::println);
 //        doubleStream.forEach(System.out::println);
 //        stream.forEach(System.out::println);
-          Stream<String> stringStream = Files.lines(Paths.get("E:\\CoCall4\\16212@test\\recvfile\\陈延文\\数据采集平台\\data-crawler-system-v1.1\\readme.txt"));
+          Stream<String> stringStream = Files.lines(Paths.get(""));
           Predicate<String> predicate = (s)->s.length()>2;
           stringStream.filter(predicate).forEach(System.out::println);
 
