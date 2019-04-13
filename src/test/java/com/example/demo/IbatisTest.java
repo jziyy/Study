@@ -1,15 +1,19 @@
 package com.example.demo;
 
 
+import com.example.demo.annotation.SpringUtil;
 import com.example.demo.ibatis.Ibatis_Bean;
 import com.example.demo.ibatis.Ibatis_Dao;
 import com.example.demo.ibatis.Ibatis_Dao_Oarcle;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.Import;
 
+import javax.sql.DataSource;
 import java.util.ArrayList;
 import java.util.List;
-
+@Import(SpringUtil.class)
 public class IbatisTest extends DemoApplicationTests {
 
     @Autowired
@@ -37,6 +41,14 @@ public class IbatisTest extends DemoApplicationTests {
         ibatis_dao.insertManyBean(ibatis_beanList);
     }
 
+    @Test
+    public void datasouse(){
+
+        DataSource dataSource = SpringUtil.getBean(DataSource.class) ;
+        System.out.println(dataSource.getClass().getName());
+
+
+    }
 
 
 }

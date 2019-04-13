@@ -9,7 +9,7 @@ import java.io.IOException;
 
 public class Demo1 {
 	public static void main(String[] args) throws IOException {
-		File file = new File("C:\\Users\\sjziy\\Desktop\\新建文件夹\\无标题.png");
+		File file = new File("");
 		BufferedImage image = ImageIO.read(file);
 		Graphics2D graphics2D = image.createGraphics();
 		//设置线段颜色
