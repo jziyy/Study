@@ -5,6 +5,7 @@ import com.example.demo.annotation.SpringUtil;
 import com.example.demo.ibatis.Ibatis_Bean;
 import com.example.demo.ibatis.Ibatis_Dao;
 import com.example.demo.ibatis.Ibatis_Dao_Oarcle;
+import com.example.demo.ibatis.service.StudyService;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
@@ -15,6 +16,8 @@ import java.util.ArrayList;
 import java.util.List;
 @Import(SpringUtil.class)
 public class IbatisTest extends DemoApplicationTests {
+    @Autowired
+    StudyService studyService;
 
     @Autowired
     Ibatis_Dao ibatis_dao;
@@ -48,6 +51,15 @@ public class IbatisTest extends DemoApplicationTests {
         System.out.println(dataSource.getClass().getName());
 
 
+    }
+
+    @Test
+    public void ibatisTranscational(){
+        Ibatis_Bean ibatis_bean = new Ibatis_Bean();
+        ibatis_bean.setId(111111);
+        ibatis_bean.setName("jziyy");
+        ibatis_bean.setPassword("jziyy");
+        System.out.println(studyService.selectAndPrint());
     }
 
 
