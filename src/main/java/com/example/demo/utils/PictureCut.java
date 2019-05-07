@@ -25,18 +25,19 @@ public class PictureCut {
      * @throws IOException
      */
     public static String CutPicture(String base64,int x,int y,int w,int h) throws IOException {
-        byte[] bytes_in = Base64.getDecoder().decode(base64.replaceAll(" ", "+"));
-        ByteArrayInputStream in = new ByteArrayInputStream(bytes_in);
-        BufferedImage image = ImageIO.read(in);
-        BufferedImage subimage = image.getSubimage(x, y, w, h);
-        String imageWidth = String.valueOf(image.getWidth());
-        String imageHeight = String.valueOf(image.getHeight());
-        System.out.println(imageHeight + "---" + imageWidth);
-        ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
-        ImageIO.write(subimage,"JPG", byteArrayOutputStream);
-        byte[] bytes = byteArrayOutputStream.toByteArray();
+        try(ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream()) {
+            byte[] bytes_in = Base64.getDecoder().decode(base64.replaceAll(" ", "+"));
+            ByteArrayInputStream in = new ByteArrayInputStream(bytes_in);
+            BufferedImage image = ImageIO.read(in);
+            BufferedImage subimage = image.getSubimage(x, y, w, h);
+            String imageWidth = String.valueOf(image.getWidth());
+            String imageHeight = String.valueOf(image.getHeight());
+            System.out.println(imageHeight + "---" + imageWidth);
+            ImageIO.write(subimage, "JPG", byteArrayOutputStream);
+            byte[] bytes = byteArrayOutputStream.toByteArray();
+            return Base64Util.encode(bytes);
 
-        return Base64Util.encode(bytes);
+        }
 
     }
 
