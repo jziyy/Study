@@ -1,14 +1,13 @@
 package com.example.demo.demo.demo;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
 
 public class Demo2 {
 
     public static void main(String[] args) {
-        Demo_Username username =new Demo_Username();
-        username.list.addAll(Arrays.asList(new String[10]));
-        System.out.println(username.list);
+        Map map = new HashMap();
+        map.put(1,"1");
+        int b = 1 + Integer.parseInt(map.get(1).toString());
+        System.out.println(b);
     }
 }
