@@ -1,9 +1,9 @@
 package com.example.demo;
 
-import com.example.demo.rabbitmq.bean.Rabbit_Bean;
-import com.example.demo.rabbitmq.exchange_direct.Direct_Produce;
-import com.example.demo.rabbitmq.exchange_fanout.Fanout_Produce;
-import com.example.demo.rabbitmq.exchange_topic.Topic_Produce;
+import com.example.demo.middleware.rabbitmq.bean.Rabbit_Bean;
+import com.example.demo.middleware.rabbitmq.exchange_direct.Direct_Produce;
+import com.example.demo.middleware.rabbitmq.exchange_fanout.Fanout_Produce;
+import com.example.demo.middleware.rabbitmq.exchange_topic.Topic_Produce;
 import org.junit.Test;
 import org.springframework.amqp.core.AmqpTemplate;
 import org.springframework.beans.factory.annotation.Autowired;

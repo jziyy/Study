@@ -88,6 +88,12 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-redis</artifactId>
         </dependency>
+        <!--redis缓存依赖包-->
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-cache</artifactId>
+        </dependency>
 
         <!--mysql依赖包-->
         <dependency>
@@ -108,11 +114,11 @@
             <version>1.8.1</version>
         </dependency>
         <!--oracle依赖-->
-        <dependency>
-            <groupId>com.oracle</groupId>
-            <artifactId>ojdbc8</artifactId>
-            <version>1.0.0</version>
-        </dependency>
+        <!--<dependency>-->
+            <!--<groupId>com.oracle</groupId>-->
+            <!--<artifactId>ojdbc8</artifactId>-->
+            <!--<version>1.0.0</version>-->
+        <!--</dependency>-->
 
         <dependency>
             <groupId>commons-lang</groupId>
@@ -137,7 +143,7 @@
         </dependency>
 
         <!--网页模拟器-->
-        <dependency>
+       <!-- <dependency>
             <groupId>com.jxbrowser-win</groupId>
             <artifactId>jxbrowser-win</artifactId>
             <version>6.0.2</version>
@@ -146,6 +152,10 @@
             <groupId>com.jxbrowser</groupId>
             <artifactId>jxbrowser</artifactId>
             <version>6.0.2</version>
+        </dependency>-->
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-pool2</artifactId>
         </dependency>
 
         <dependency>

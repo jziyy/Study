@@ -2,13 +2,12 @@ package com.example.demo;
 
 
 import com.example.demo.annotation.SpringUtil;
-import com.example.demo.ibatis.Ibatis_Bean;
-import com.example.demo.ibatis.Ibatis_Dao;
-import com.example.demo.ibatis.Ibatis_Dao_Oarcle;
-import com.example.demo.ibatis.service.StudyService;
+import com.example.demo.middleware.ibatis.Ibatis_Bean;
+import com.example.demo.middleware.ibatis.Ibatis_Dao;
+import com.example.demo.middleware.ibatis.Ibatis_Dao_Oarcle;
+import com.example.demo.middleware.ibatis.service.StudyService;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Import;
 
 import javax.sql.DataSource;

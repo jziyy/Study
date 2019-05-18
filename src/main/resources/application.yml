@@ -1,30 +1,36 @@
 spring:
-        datasource:
-          url: jdbc:mysql://180.76.55.189:3308/study?useUnicode&characterEncoding=utf-8
-          username: jziyy
-          password: q8048010
-          driver-class-name: com.mysql.cj.jdbc.Driver
-        application:
-          name: spirng-boot-rabbitmq-example
-        rabbitmq:
-          host: 180.76.55.189
-          port: 5672
-          username: jziyy
-          password: q80480
-        redis:
-          database: 0
-          host: 180.76.55.189
-          port: 6379
-          password: jziyy
-          jedis:
-            pool:
-              max-active: 8
-              max-wait: -1
-              max-idle: 5
-              min-idle: 0
-          timeout: 10000
+  datasource:
+    url: jdbc:mysql://180.76.55.189:3308/study?useUnicode&characterEncoding=utf-8
+    username: jziyy
+    password: q8048010
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  application:
+    name: spirng-boot-rabbitmq-example
+  cache:
+    type: redis
+    redis:
+      time-to-live: 20000
+      cache-null-values: false
+  rabbitmq:
+    host: 180.76.55.189
+    port: 5672
+    username: jziyy
+    password: q80480
+  redis:
+    database: 0
+    host: 180.76.55.189
+    port: 6379
+    password: jziyy
+    jedis:
+      pool:
+        max-active: 8
+        max-wait: -1
+        max-idle: 5
+        min-idle: 0
+    timeout: 10000
 server:
   port: 9090
 mybatis:
   configuration:
     jdbc-type-for-null: null
+
